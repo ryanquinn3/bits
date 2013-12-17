@@ -1,0 +1,19 @@
+/*table
+{
+	font-size: 20;
+	font-family: arial;	
+	border-spacing: 30px;
+}*/
+
+.green
+{
+	color:green;
+}
+.red
+{
+	color:red;
+}
+input[type=number]
+{
+	width:100px;
+}
