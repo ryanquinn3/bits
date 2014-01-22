@@ -4,113 +4,133 @@
 	<link href="bootstrap.min.css" rel="stylesheet">
 	<title>The Bits</title>
 
-	<ul class="nav nav-pills nav-justified">
+	<ul class="nav nav-pills">
   	<li class="active"><a href="#">Home</a></li>
   	<li><a href="#">Profile</a></li>
   	<li><a href="#">Messages</a></li>
-</ul>
+	</ul>
 </head>
 <body>
 
-
-
 <div class="panel panel-default">
-  <!-- Default panel contents -->
-  <!-- Table -->
-  <table class="table">
-    <tr>
-		<td><h3>Value</h3></td>
-		<td><h3>Change</h3></td>
-		<td><h3>Quantity</h3></td>
-		<td><h3>Price</h3></td>
-		<td><h3>Value</h3></td>
-	</tr>
-  </table>
+  <div class="row">
+  	<div class="col-md-2 col-md-offset-1"><h3>Value</h3></div>
+  	<div class="col-md-2"><h3>Change</h3></div>
+  	<div class="col-md-2"><h3>Quantity</h3></div>
+  	<div class="col-md-2"><h3>Price</h3></div>
+  	<div class="col-md-2"><h3>Profit</h3></div>
+  </div>
 </div>
 
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<h4>Bitcoin</h4>
-	</div>
-  	<table class="table">
-	    <tr>
-    		<td id="bits">	
-    		</td>
-    		<td id="bitdif">
-			</td>
-			<td>	
-				<input class="form-control" type="number" id="bitq"/>
-			</td>
-			<td>
-				<input class="form-control" type="number" id="bitp" placeholder="$"/>
-			</td>
-			<td id="bitv">
-			</td>
-		</tr>
-	</table>
+		</div>
+	<div class="row">
 
-</div>	
+		<div class="col-md-2 col-md-offset-1" id="bits">
+		</div>
+
+		<div class="col-md-2" id="bitdif">
+		</div>
+
+		<div class="col-md-2">
+			<input class="form-control" type="number" id="bitq"/>
+		</div>
+
+		<div class="col-md-2">
+			<input class="form-control" type="number" id="bitp" placeholder="$"/>
+		</div>
+
+		<div class="col-md-2" id="bitv">
+		</div>
+	</div>
+</div>
+
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading"><h4>Litecoin</h4></div>
+  <div class="panel-heading">
+  	<h4>Litecoin</h4>
+  </div>
 
   <!-- Table -->
-  <table class="table">
-    <tr>
-		<td id="lite"></td>
-		<td id="litedif"></td>
-		<td>
+  <div class="row">
+
+		<div class="col-md-2 col-md-offset-1" id="lites">
+		</div>
+
+		<div class="col-md-2" id="litedif">
+		</div>
+
+		<div class="col-md-2">
 			<input class="form-control" type="number" id="liteq"/>
-			</td>
-		<td>
-			<input class="form-control" type="number" id="litep"/>
-		</td>
-		<td id="litev"></td>
-	</tr>
-  </table>
+		</div>
+
+		<div class="col-md-2">
+			<input class="form-control" type="number" id="litep" placeholder="$"/>
+		</div>
+		<div class="col-md-2" id="litev">
+		</div>
+	</div>
 </div>
-	
+
+
+
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading"><h4>Feather Coin</h4></div>
 
-  <!-- Table -->
-  <table class="table">
-    <tr>
-		<td id="feather"></td>
-		<td id="featherdif"></td>
-		<td>
-			<input class="form-control" type="number"/>
-		</td>
-		<td>
-			<input class="form-control" type="number"/>
-		</td>
-		<td></td>
-	</tr>
-  </table>
-</div>	
-	
+  <div class="row">
+
+		<div class="col-md-2 col-md-offset-1" id="feather">
+		</div>
+
+		<div class="col-md-2" id="featherdif">
+		</div>
+
+		<div class="col-md-2">
+			<input class="form-control" type="number" id="featherq"/>
+		</div>
+
+		<div class="col-md-2">
+			<input class="form-control" type="number" id="featherp" placeholder="$"/>
+		</div>
+
+
+		<div class="col-md-2" id="featherv">
+		</div>
+	</div>
+  
+</div>
+
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading"><h4>World Coin</h4></div>
 
-  <!-- Table -->
-  <table class="table">
-    <tr>
-		<td id="world"></td>
-		<td id="worlddif"></td>
-		<td>
-				<input class="form-control" type="number"/>
-		</td>
-		<td>
-				<input class="form-control" type="number"/>
-		</td>
-		<td></td>
-	</tr>
+  <div class="row">
+
+		<div class="col-md-2 col-md-offset-1" id="world">
+		</div>
+
+		<div class="col-md-2" id="worlddif">
+		</div>
+
+		<div class="col-md-2">
+			<input class="form-control" type="number" id="worldq"/>
+		</div>
+
+		<div class="col-md-2">
+			<input class="form-control" type="number" id="worldp" placeholder="$"/>
+		</div>
+
+
+		<div class="col-md-2" id="worldv">
+		</div>
+	</div>
   </table>
-</div>	
+</div>
 
 
 
@@ -119,44 +139,64 @@
   <div class="panel-heading"> <h4>Bottle Caps</h4> </div>
 
   <!-- Table -->
-  <table class="table">
-   	<tr>
-		<td id="caps"></td>
-		<td id="capsdif"></td>
-		<td>
-			<input class="form-control" type="number"/>
-		</td>
-		<td>
-			<input class="form-control" type="number"/>
-		</td>
-		<td></td>
-	</tr>
-  </table>
+  <div class="row">
+
+		<div class="col-md-2 col-md-offset-1" id="caps">
+		</div>
+
+		<div class="col-md-2" id="capsdif">
+		</div>
+
+		<div class="col-md-2">
+			<input class="form-control" type="number" id="bottleq"/>
+		</div>
+
+		<div class="col-md-2">
+			<input class="form-control" type="number" id="bottlep" placeholder="$"/>
+		</div>
+
+
+		<div class="col-md-2" id="bottlev">
+		</div>
+	</div>
 </div>
-	
+
 
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading"> <h4>Peer Coin</h4></div>
 
-  <!-- Table -->
-  <table class="table">
-    <tr>
-		<td id="peer"></td>
-		<td id="peerdif"></td>
-		<td>
-			<input class="form-control" type="number"/>
-		</td>
-		<td>
-				<input class="form-control" type="number"/>
-		</td>
-	</tr>
-  </table>
-</div>	
+  <div class="row">
 
-<div class="container">
-	<button type="button" class="btn-warning btn-lg center-block" id="calc">Calculate</button>
+		<div class="col-md-2 col-md-offset-1" id="peer">
+		</div>
+
+		<div class="col-md-2" id="peerdif">
+		</div>
+
+		<div class="col-md-2">
+			<input class="form-control" type="number" id="peerq"/>
+		</div>
+
+		<div class="col-md-2">
+			<input class="form-control" type="number" id="peerp" placeholder="$"/>
+		</div>
+
+
+		<div class="col-md-2" id="peerv">
+		</div>
+	</div>
+  
+</div>
+
+<div class="navbar navbar-fixed-bottom">
+<div class="col-md-4 col-md-offset-2">
+	<button type="button" class="btn-warning btn-lg" id="calc">Calculate</button>
+</div>	
+<div class="col-md-4 col-md-offset-2">
+	<button type="button" class="btn-success btn-lg" id="refresh">Refresh</button>
+</div>
 </div>
 </body>
 

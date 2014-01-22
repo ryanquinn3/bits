@@ -20,6 +20,12 @@ function coin(val,diff,input_quant,input_price,calc_val)
 	this.calc_val = calc_val;
 }
 
+$.fn.digits = function(){ 
+    return this.each(function(){ 
+        $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
+    })
+}
+
 var coins = new Array();
 
 coins[0] = new coin("#bits","#bitdif","#bitq","#bitp","#bitv");
@@ -36,10 +42,10 @@ var bits = function(data,textStatus,jqXHR)
 	var diff = (lastPrice["bitcoin"] - price).toFixed(2);
 	$("#bits").text("$"+price);
 	$("#bitdif").text("$"+diff);
-	if(diff>=0)
+	/*if(diff>=0)
 		$("#bitdif").attr("class","green");
 	else
-		$("#bitdif").attr("class","red");
+		$("#bitdif").attr("class","red");*/
 	lastPrice["bitcoin"] = price;
 };
 
@@ -49,12 +55,12 @@ var lites = function(data,textStatus,jqXHR)
 	var json = $.parseJSON(data);
 	var price = parseFloat(json.ticker.last).toFixed(2);
 	var diff = (lastPrice["litecoin"] - price).toFixed(2);
-	$("#lite").html("$"+price);
-	$("#litedif").html("$"+diff);
-	if(diff>=0)
+	$("#lites").text("$"+price);
+	$("#litedif").text("$"+diff);
+	/*if(diff>=0)
 		$("#litedif").attr("class","green");
 	else
-		$("#litedif").attr("class","red");
+		$("#litedif").attr("class","red");*/
 	lastPrice["litecoin"] = price;
  
 };
@@ -66,10 +72,10 @@ var feather = function(data,textStatus,jqXHR)
 	var diff = (lastPrice["feathercoin"]-price).toFixed(2);
 	$("#feather").html("$"+price);
 	$("#featherdif").html("$"+diff);
-	if(diff >= 0)
+	/*if(diff >= 0)
 		$("#featherdif").attr("class","green");
 	else
-		$("#featherdif").attr("class","red");
+		$("#featherdif").attr("class","red");*/
 	lastPrice["feathercoin"] = price;
 };
 
@@ -80,10 +86,10 @@ var world = function(data,textStatus,jqXHR)
 	var diff = (lastPrice["worldcoin"]-price).toFixed(2);
 	$("#world").html("$"+price);
 	$("#worlddif").html("$"+diff);
-	if(diff >= 0)
+	/*if(diff >= 0)
 		$("#worlddif").attr("class","green");
 	else
-		$("#worlddif").attr("class","red");
+		$("#worlddif").attr("class","red");*/
 	lastPrice["worldcoin"] = price;
 
 };
@@ -95,10 +101,10 @@ var caps = function(data,textStatus,jqXHR)
 	var diff = (lastPrice["bottlecaps"] - price).toFixed(2);
 	$("#caps").html("$"+price);
 	$("#capsdif").html("$"+diff);
-	if(diff >= 0)
+	/*if(diff >= 0)
 		$("#capsdif").attr("class","green");
 	else
-		$("#capsdif").attr("class","red");
+		$("#capsdif").attr("class","red");*/
 	lastPrice["bottlecaps"] = price;
 };
 var peer = function(data,textStatus,jqXHR)
@@ -108,12 +114,6 @@ var peer = function(data,textStatus,jqXHR)
 	var diff = (lastPrice["peercoin"] - price).toFixed(2);
 	$("#peer").html("$"+price);
 	$("#peerdif").html("$"+diff);
-	var c;
-	if(diff >= 0)
-		c = "green";
-	else
-		c = "red";
-	$("#peerdif").attr("class",c);
 	lastPrice["peercoin"] = price;
 };
 
@@ -129,9 +129,9 @@ $(document).ready(function()
 	for(var i = 0; i < apiList.length;i++)
 	{
 		ajaxc(apiList[i],callBacks[i]);
-		var temp = "ajaxc(apiList["+i+"],callBacks["+i+"])";
-		setInterval(temp,10000);
 	}
+
+
 
 	$("#calc").click(function(){
 
@@ -145,10 +145,25 @@ $(document).ready(function()
 				var newPrice = parseFloat($(cur.val).text().substring(1));
 				var new_val = $(cur.input_quant).val()*newPrice;
 				var diff = new_val - old_val;
-				$(cur.calc_val).text("$"+diff);
+				$(cur.calc_val).text("$"+diff.toFixed(2));
+				$(cur.calc_val).digits();
 			}
 		}
 	});
+
+	$("#refresh").click(function()
+	{
+
+		console.log("Clicked");
+		for(var i = 0; i < apiList.length;i++)
+		{
+			ajaxc(apiList[i],callBacks[i]);
+		}
+	});
+
+
+
+
 });
 
 
